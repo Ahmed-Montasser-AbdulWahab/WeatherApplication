@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Responsive navbar-->
-    <partial Name="_PartialView"/>
+    @await Component.InvokeAsync("Nav", new {name="Weather App"});
     <!-- Page Content-->
     <div class="container px-4 px-lg-5">
         @RenderBody()
