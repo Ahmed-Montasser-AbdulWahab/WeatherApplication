@@ -7,7 +7,13 @@ namespace WeatherApplication.Controllers
     [Controller]
     public class WeatherController : Controller
     {
-        private readonly IRepository _repository = new Repository();
+        private readonly IRepository _repository;
+
+        public WeatherController(IRepository repository)
+        {
+            _repository = repository;
+        }
+
         [HttpGet]
         [Route("/")]
         public IActionResult Index()
